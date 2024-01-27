@@ -4,7 +4,7 @@ n_array=(2 5 10 25 50 100 250 500 1000)
 
 function run_program() {
   java src.Run "$2" "$3" "$4" >> "$1"
-  printf("Progress: %3.2f%%\r" $((10000 * $2 / $4))e-2)
+  printf "Progress: %3.2f%%\r" $((10000 * $2 / $4))e-2
 }
 
 function greater() {
@@ -14,7 +14,7 @@ function greater() {
 for max in "${max_array[@]}"
   do
   RANDOM=123456789 # Seed for random number generation
-  expanded_file_name = "${file_name}_with_${max}_elements.csv"
+  expanded_file_name="${file_name}_with_${max}_elements.csv"
   echo "\"Number of Partitions\",\"Number of Elements\",Index,Found,\"Number of Iterations\",\"Time Took in Microseconds\",Language" > $expanded_file_name
   for n in "${n_array[@]}"
     do
